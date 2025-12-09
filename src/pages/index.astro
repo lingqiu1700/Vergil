@@ -1,16 +1,195 @@
 ---
-
+import "../styles/index.css";
+import Header from "../components/navigation.astro";
 ---
 
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>维吉尔</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div id="app">
+			<div class="background">
+				<div class="huandeng-container">
+					<div class="huandeng-left">
+						<div class="slider-container">
+							<div class="slider-wrapper" id="sliderWrapper">
+								<div class="slider-1 slider" data-url="yamota">
+									<img
+										class="slider-img"
+										src="https://pan.axooo.cn/f/6NqmUM/%E9%98%8E%E9%AD%94%E5%88%80.jpg"
+										alt="yamota"
+									/>
+									<div class="slider-overlay">
+										<div class="slider-title">
+											<h2>阎魔刀</h2>
+											<p>维吉尔从小用到大</p>
+											<button
+												class="slider-link-button"
+												aria-label="查看详细"
+											>
+												"查看详情"
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="slider-2 slider" data-url="vergil">
+									<img
+										class="slider-img"
+										src="https://pan.axooo.cn/f/p45AUn/vergil.jpg"
+										alt="vergil"
+									/>
+									<div class="slider-overlay">
+										<div class="slider-title">
+											<h2>维吉尔</h2>
+											<p>猫抛瓦</p>
+											<button
+												class="slider-link-button"
+												aria-label="查看详细"
+											>
+												"查看详情"
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="slider-3 slider" data-url="mirage_edge">
+									<img
+										class="slider-img"
+										src="https://pan.axooo.cn/f/Y1nmH4/%E8%8D%94%E6%9E%9D%E5%88%83.jpg"
+										alt="mirage_edge"
+									/>
+									<div class="slider-overlay">
+										<div class="slider-title">
+											<h2>魅影刃</h2>
+											<p>
+												一把外形与力量之刃相同的幻影剑
+											</p>
+											<button
+												class="slider-link-button"
+												aria-label="查看详细"
+											>
+												"查看详情"
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="slider-4 slider" data-url="beowulf">
+									<img
+										class="slider-img"
+										src="https://pan.axooo.cn/f/GABeHN/beowulf.jpg"
+										alt="beowulf"
+									/>
+									<div class="slider-overlay">
+										<div class="slider-title">
+											<h2>贝奥武夫</h2>
+											<p>核爆拳-核爆拳-核爆拳</p>
+											<button
+												class="slider-link-button"
+												aria-label="查看详细"
+											>
+												"查看详情"
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="huandeng-right">
+						<div class="recommend-content">
+							<div class="recommend-head">
+								<h2 class="recommend-title">
+									<i class="fa fa-star"></i>
+									推荐
+								</h2>
+							</div>
+							<ul class="recommend-list">
+								<li class="recommend-item">
+									<a href="/yamota/">
+										<i class="fas fa-external-link-alt"></i>
+										<span>阎魔刀相关技能介绍</span>
+									</a>
+								</li>
+								<li class="recommend-item">
+									<a href="/mirage_edge">
+										<i class="fas fa-external-link-alt"></i>
+										<span>魅影刃相关技能介绍</span>
+									</a>
+								</li>
+								<li class="recommend-item">
+									<a href="/beowulf/">
+										<i class="fas fa-external-link-alt"></i>
+										<span>贝奥武夫相关技能介绍</span>
+									</a>
+								</li>
+								<li class="recommend-item">
+									<a href="/vergil/">
+										<i class="fas fa-external-link-alt"></i>
+										<span>维吉尔本身相关技能介绍</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<Header />
+		<script>
+			// 获取 DOM 元素
+			const wrapper = document.getElementById("sliderWrapper");
+			const slides = document.querySelectorAll(".slider");
+
+			let currentIndex = 0;
+			const totalSlides = slides.length;
+			const intervalTime = 3000; // 3秒切换一次
+
+			// 1. 自动轮播函数
+			function nextSlide() {
+				currentIndex++;
+				if (currentIndex >= totalSlides) {
+					currentIndex = 0; // 回到第一张
+				}
+				updateSlider();
+			}
+
+			// 2. 更新视图函数
+			function updateSlider() {
+				// 计算移动距离：索引 * -100%
+				if (wrapper == null) return;
+				const offset = currentIndex * -100;
+				wrapper.style.transform = `translateX(${offset}%)`;
+			}
+
+			// 3. 启动定时器
+			let autoPlay = setInterval(nextSlide, intervalTime);
+
+			// 4. 点击跳转逻辑 (保留你原本的功能)
+			slides.forEach((slide) => {
+				slide.addEventListener("click", () => {
+					const urlKey = slide.getAttribute("data-url");
+					if (urlKey) {
+						window.location.href = `/${urlKey}/`;
+					}
+				});
+
+				// 可选：鼠标悬停时暂停轮播，移开继续
+				slide.addEventListener("mouseenter", () =>
+					clearInterval(autoPlay),
+				);
+				slide.addEventListener(
+					"mouseleave",
+					() => (autoPlay = setInterval(nextSlide, intervalTime)),
+				);
+			});
+		</script>
 	</body>
 </html>

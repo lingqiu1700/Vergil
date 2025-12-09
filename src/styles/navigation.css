@@ -1,0 +1,68 @@
+.head-app::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 0px 16px;
+  justify-content: space-between;
+}
+
+.head-app{
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #37373f;
+    z-index: 1000;
+    display: flex;
+}
+
+.head-menu{
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    left: 24px;
+    display: flex;
+}
+
+.head-right{
+    display: flex;
+    position: relative;
+    left: 80%;
+}
+
+.all-button{
+    display: flex;
+    align-items: center;
+}
+
+.head-login-button{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.header-login-btn{
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login{
+    cursor: pointer;
+}
+
+.header-register-btn{
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
