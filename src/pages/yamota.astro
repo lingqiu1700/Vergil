@@ -14,15 +14,19 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>阎魔刀</title>
 	</head>
-	<body> </body><script>
+	<body>
+		<div id="app">
+			<!-- 页面内容 -->
+		</div>
+	</body>
+
+
+	<script>
 		import { createApp } from "vue";
 
 		const app = createApp({
 			data() {
-				return {
-					count: 0,
-				};
-			},
+			}
 		});
 
 		app.mount("#app");
