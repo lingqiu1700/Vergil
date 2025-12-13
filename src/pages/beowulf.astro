@@ -1,0 +1,83 @@
+---
+import Header from "../components/navigation.astro";
+import Sklls from "../components/sklls_description.vue";
+import "../styles/vergil.css";
+
+const skillsData = [
+    {
+        id: 1,
+        sklls_name: "贝奥武夫连击•一",
+        sklls_description: "以双回旋踢结束的强大连击。连击过程中长按可蓄力攻击。",
+        sklls_command: "立于地面时，连按三次攻击键，真魔人形态时，再继续按将紧接一次致命的最后一击。",
+        img: "",
+    },
+    {
+        id: 2,
+        sklls_name:"贝奥武夫连击•二",
+        sklls_description: "狂暴迅速地快踢对方，此过程中长按可蓄力攻击。",
+        sklls_command: "立于地面时，按两次攻击键后，稍等片刻再按两次攻击键。真魔人形态时，再继续按将紧接一次致命的最后一击。",
+        img: "",
+    },
+    {
+        id: 3,
+        sklls_name: "流星踢",
+        sklls_description: "在空中朝对方急速下落后，再冲飞对方。真魔人形态时，按住攻击键紧接一次飞踢。",
+        sklls_command: "身在空中时，按攻击键",
+        img: "",
+    },
+    {
+        id: 4,
+        sklls_name: "月轮踢",
+        sklls_description: "猛烈回旋着袭向敌人，以强力的脚跟踢收招，踢倒敌人，真魔人形态时，回旋速度提升，破坏力加大。",
+        sklls_command: "按shift+前方向键+攻击键。",
+        img: "",
+    },
+    {
+        id: 5,
+        sklls_name: "强上勾拳",
+        sklls_description: "冲向敌人。用强劲的上勾拳将其击飞。可蓄力变成龙跃拳",
+        sklls_command: "立于地面时，按shift+后方向键+攻击键，在龙跃拳的情况下连续按住攻击键至拳套两次发光释放双龙破(真魔人额外追加一段)",
+        img: "",
+    },
+    {
+        id: 6,
+        sklls_name: "冲跳",
+        sklls_description: "在普通跳跃时也能造成伤害",
+        sklls_command: "立于地面时，按空格",
+        img: "",
+    },
+    {
+        id: 7,
+        sklls_name: "速踢13",
+        sklls_description: "面向敌人，闪电般地连续重踢。按住攻击键踢飞敌人，并一同上跳。真魔人形态时，踢击更强悍，次数更多。",
+        sklls_command: "立于地面时，按shift+从后向前按方向键+攻击键",
+        img: "",
+    },
+    {
+        id: 8,
+        sklls_name: "撼地烈狱(核爆拳)",
+        sklls_description: "将全身之力注入拳中，直接击向地面。强大的冲击波可击飞最重的敌人。",
+        sklls_command: "真魔人形态或真魔人槽蓄满且集中槽达到2级时，按shitft+前方向键+攻击键+瞬移键",
+        img: "",
+    }
+]
+---
+
+<html lang="cn">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>贝奥武夫</title>
+    </head>
+    <body>
+        <Header />
+
+        <div id="app">
+            <Sklls sklls={skillsData} client:load />
+        </div>
+    </body>
+    
+    </html>

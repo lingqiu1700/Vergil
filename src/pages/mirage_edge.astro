@@ -1,0 +1,90 @@
+---
+import Header from "../components/navigation.astro";
+import Sklls from "../components/sklls_description.vue";
+import "../styles/vergil.css";
+
+const skillsData = [
+    {
+        id: 1,
+        sklls_name: "魅影刃连斩•一",
+        sklls_description: "此技能可同时伤害前方与后方的敌人。在第三斩后，快速按攻击键可追加前刺攻击。真魔人形态时，按攻击键进行第三斩，以及一次致命的双连刺。",
+        sklls_command: "立于地面时，连续按攻击键。",
+        img: "",
+    },
+    {
+        id: 2,
+        sklls_name:"魅影刃连斩•二",
+        sklls_description: "此技能同时使用魅影刃与阎魔刀。攻击时可用方向键控制方向。",
+        sklls_command: "立于地面时，按攻击键两次后，稍等片刻按攻击键，再连按攻击键。",
+        img: "",
+    },
+    {
+        id: 3,
+        sklls_name: "回旋飞刃",
+        sklls_description: "将魅影刃投向敌人，剑身旋转形成真空漩涡吸引敌人，将其千刀万剐。",
+        sklls_command: "按住攻击键直到剑身发光后再松开",
+        img: "",
+    },
+    {
+        id: 4,
+        sklls_name: "破盔",
+        sklls_description: "从上方施展毁灭性的一击，足以粉碎最坚固的重装头盔和恶魔头骨。",
+        sklls_command: "身在空中时，按攻击键",
+        img: "",
+    },
+    {
+        id: 5,
+        sklls_name: "迅刺",
+        sklls_description: "高速冲向敌人，用力持剑刺向敌人。真魔人形态时，消耗真魔人槽可强化攻击，可同时击中多个敌人。",
+        sklls_command: "按shift+前方向键+攻击键",
+        img: "",
+    },
+    {
+        id: 6,
+        sklls_name: "狂刺",
+        sklls_description: "令人应接不暇的刺击风暴，强大的前刺力可将敌人冲至后方。",
+        sklls_command: "迅刺后继续按住攻击键击中敌人后松开，立即连按攻击键",
+        img: "",
+    },
+    {
+        id: 7,
+        sklls_name: "凌空时刻",
+        sklls_description: "上挑将敌人击飞。按住攻击键可跟随敌人上跳。真魔人形态时，一次进行多次斩击，破坏力进一步增强。",
+        sklls_command: "立于地面时，按shift+后方向键+攻击键",
+        img: "",
+    },
+    {
+        id: 8,
+        sklls_name: "剑气斩",
+        sklls_desrciption: "利用剑气攻击远处的敌人。在释放完后再按攻击键再释放一次强大的剑气。",
+        sklls_command: "立于地面时，按shift+从后向前方向键+攻击键。再按住攻击键知道剑身发光后松开",
+        img: "",
+    },
+    {
+        id: 9,
+        sklls_name: "深冲利刺",
+        sklls_desrciption: "双持阎魔刀和魅影刃前冲，全力使出双刀绝技。",
+        sklls_commadn: "真魔人形态或真魔人槽蓄满且集中槽达到2级时，按shitft+前方向键+攻击键+瞬移键",
+        img: "",
+    }
+]
+---
+
+<html lang="cn">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>魅影刃</title>
+    </head>
+    <body>
+        <Header />
+
+        <div id="app">
+            <Sklls sklls={skillsData} client:load />
+        </div>
+    </body>
+    
+    </html>

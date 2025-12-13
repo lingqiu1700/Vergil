@@ -1,34 +1,121 @@
 ---
 
+import Header from "../components/navigation.astro";
+import Sklls from "../components/sklls_description.vue";
+import "../styles/vergil.css";
+
+
+const skillsData = [
+    {
+        id: 1,
+        sklls_name: "阎魔刀连斩•一",
+        sklls_description: "用刀鞘迅猛攻击，并结合一次横斩。真魔人形态时，在连续按攻击键发动魔人七连斩。",
+        sklls_command: "立于地面时连续按攻击键",
+        img: "",
+    },
+    {
+        id: 2,
+        sklls_name: "阎魔刀连斩•二",
+        sklls_description: "将敌人击飞后，再释放一支幻影剑，收刀时幻影剑会爆炸。真魔人形态时，所释放的幻影剑数量将增多。按攻击键追加一次斩击",
+        sklls_command: "立于地面时，连按两次攻击键，稍等片刻再按一次攻击键",
+        img: "",
+    },
+    {
+        id: 3,
+        sklls_name: "阎魔刀连斩•三",
+        sklls_description: "用刀进行无数次斩击，将敌人一分为二。真魔人形态时，最后一斩的攻击范围将扩大。",
+        sklls_command: "立于地面时，连按三次攻击键，稍等片刻再连续按攻击键（连续按的次数越多，斩击次数越多）", // 注意：原代码中 command 拼写可能有误，这里统一修正
+        img: "",
+    },
+	{
+		id: 4,
+		sklls_name: "御空刀舞•一",
+		sklls_description: "在空中不停地连续攻击敌人。",
+		sklls_command: "身在空中时，连续按攻击键",
+		img: "",
+	},
+	{
+		id: 5,
+		sklls_name: "御空刀舞•二",
+		sklls_description: "在空中回旋向下连击，再用力往下斩，击溃敌人。",
+		sklls_command: "身在空中时，连续按两次攻击键后，稍等片刻再按两次攻击键",
+		img: "",
+	},
+	{
+		id: 6,
+		sklls_name: "裂空审判(次元斩)",
+		sklls_description: "闪电般迅速拔刀，无数次斩击敌人，可连接在大部分阎魔刀技能后使用，看准时机松开攻击键可提升威力。在魔人形态时，可一次斩击三个敌人。",
+		sklls_command: "长按攻击键后松开，刀鞘发光时松开可增强威力。",
+		img: "",
+	},
+	{
+		id: 7,
+		sklls_name: "迅前冲",
+		sklls_description: "向前疾冲，持刀一路斩击遇到的一切。真魔人形态时，最后一斩将伴随一支幻影剑，并在收刀后爆炸，可连续多次进行该动作。",
+		sklls_command: "立于地面时，按shift+向前键+攻击键",
+		img: "",
+	},
+	{
+		id: 8,
+		sklls_name: "星旋天翔",
+		sklls_description: "边上升边攻击周围的敌人，同时也将敌人一起卷入空中。",
+		sklls_command: "迅冲斩后，继续按住攻击键直到击中敌人",
+		img: "",
+	},
+	{
+		id: 9,
+		sklls_name: "上斩",
+		sklls_description: "用阎魔刀上挑攻击敌人，将其击飞，真魔人形态时，刀可斩击两次，且将造成更大的伤害。",
+		sklls_command: "立于地面时，按shift+向后键+攻击键",
+		img: "",
+	},
+	{
+		id: 10,
+		sklls_name: "上斩2",
+		sklls_description: "长按攻击键将敌人击飞至上空，自己也随之上跳。",
+		sklls_command: "立于地面时，按shift+向后键+长按攻击键",
+		img: "",
+	},
+	{
+		id: 11,
+		sklls_name: "空坠斩",
+		sklls_description: "集中力量下落至目标敌人，并毫不留情地向下攻击。",
+		sklls_command: "身在空中时，按shift+向后键+攻击键",
+		img: "",
+	},
+	{
+		id: 12,
+		sklls_name: "虚无刀界",
+		sklls_description: "以惊人的速度挥刀划开前方空间，形成的真空裂隙可将敌人吸引至身边。",
+		sklls_command: "立于地面时，按shift+向后键后快速按向前键+攻击键",
+		img: "",
+	},
+	{
+		id:13,
+		sklls_name: "裂空审判•极",
+		sklls_desrciption: "凭借极快的斩速，同时在多个地点斩击敌人，需要消耗真魔人槽。",
+		sklls_command: "真魔人形态或真魔人槽蓄满且集中槽达到2级时，按shift+向前键+攻击键+闪避键",
+		img: "",
+	}
+
+];
 ---
 
 <html lang="cn">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-		/>
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>阎魔刀</title>
-	</head>
-	<body>
-		<div id="app">
-			<!-- 页面内容 -->
-		</div>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>阎魔刀</title>
+    </head>
+    <body>
+        <Header />
 
-
-	<script>
-		import { createApp } from "vue";
-
-		const app = createApp({
-			data() {
-			}
-		});
-
-		app.mount("#app");
-	</script>
-</html>
+        <div id="app">
+            <Sklls sklls={skillsData} client:load />
+        </div>
+    </body>
+    
+    </html>
