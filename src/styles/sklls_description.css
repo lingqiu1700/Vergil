@@ -14,3 +14,17 @@
 .skills{
     margin: 20px;
 }
+
+.skills h2{
+    text-align: center;
+}
+
+.skills p {
+    padding-left: 5%;
+}
+
+.skills img {
+    object-position: center;
+    object-fit: cover;
+    padding-left: 35%;
+}

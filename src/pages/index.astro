@@ -172,7 +172,7 @@ import Header from "../components/navigation.astro";
 			// 3. 启动定时器
 			let autoPlay = setInterval(nextSlide, intervalTime);
 
-			// 4. 点击跳转逻辑 (保留你原本的功能)
+			// 4. 点击跳转逻辑
 			slides.forEach((slide) => {
 				slide.addEventListener("click", () => {
 					const urlKey = slide.getAttribute("data-url");
@@ -181,7 +181,6 @@ import Header from "../components/navigation.astro";
 					}
 				});
 
-				// 可选：鼠标悬停时暂停轮播，移开继续
 				slide.addEventListener("mouseenter", () =>
 					clearInterval(autoPlay),
 				);
