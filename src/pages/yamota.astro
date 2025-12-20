@@ -3,7 +3,8 @@
 import Header from "../components/navigation.astro";
 import Sklls from "../components/sklls_description.vue";
 import "../styles/vergil.css";
-
+import { ClientRouter } from 'astro:transitions';
+import Music from "../components/music.astro";
 
 const skillsData = [
     {
@@ -115,10 +116,11 @@ const skillsData = [
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>阎魔刀</title>
+		<ClientRouter />
     </head>
     <body>
         <Header />
-
+		<Music />
         <div id="app">
             <Sklls sklls={skillsData} client:load />
         </div>

@@ -1,5 +1,6 @@
 ---
 import "../styles/navigation.css"
+import { ClientRouter } from 'astro:transitions';
 
 const text = {
     home: "首页",
@@ -9,6 +10,7 @@ const text = {
     beowulf: "贝奥武夫",
 }
 ---
+    <ClientRouter />
 
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
@@ -54,6 +56,8 @@ const text = {
 
     <script>
 
+    document.addEventListener('astro:page-load', () => {
+
     const menuTrigger = document.getElementById('menu-trigger');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebar-overlay');
@@ -84,4 +88,6 @@ const text = {
     if (overlay) {
         overlay.addEventListener('click', closeSidebar);
     }
+
+})
 </script>

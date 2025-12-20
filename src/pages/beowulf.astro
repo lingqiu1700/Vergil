@@ -2,6 +2,7 @@
 import Header from "../components/navigation.astro";
 import Sklls from "../components/sklls_description.vue";
 import "../styles/vergil.css";
+import Music from "../components/music.astro";
 
 const skillsData = [
     {
@@ -81,7 +82,7 @@ const skillsData = [
     </head>
     <body>
         <Header />
-
+        <Music />
         <div id="app">
             <Sklls sklls={skillsData} client:load />
         </div>
